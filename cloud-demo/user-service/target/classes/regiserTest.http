@@ -1,0 +1,6 @@
+POST http://localhost:8014/user/register
+Content-Type: application/json
+
+{"name": "ph", "password": "xxx", "avatar": "bird"}
+
+###

@@ -1,0 +1,30 @@
+server:
+  port: 8014
+Spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/user?useSSL=false
+    username: root
+    password: xh19970916
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.library.user.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.library: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+userservice:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
+ribbon:
+  eager-load:
+    enabled: true
+    clients: user-service
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: basic
